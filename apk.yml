@@ -27,6 +27,10 @@ jobs:
           done
           rm -rf build_app/android/app/src/main/res/mipmap-anydpi-v26
           sed -i 's/android:label="[^"]*"/android:label="İş Takip"/' build_app/android/app/src/main/AndroidManifest.xml
+      - name: Sabit imza anahtarini yerlestir (guncellemede veri silinmesin)
+        run: |
+          mkdir -p ~/.android
+          cp signing/debug.keystore ~/.android/debug.keystore
       - name: APK derle
         working-directory: build_app
         run: |
