@@ -2456,7 +2456,7 @@ class OzetTab extends StatelessWidget {
         final ms = S.makinaStat(m).where((s) => s.active).toList();
         final borclu = (S.cust.values.where((s) => s.kalan > 0.5).toList()..sort((a, b) => b.kalan.compareTo(a.kalan))).take(5).toList();
         return Scaffold(
-          appBar: AppBar(title: const Text('Özet ve Analiz'), actions: [
+          appBar: AppBar(title: const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Özet ve Analiz'), Text('Sürüm 7 · 1.5.0+6', style: TextStyle(fontSize: 10.5, color: Colors.white70, fontWeight: FontWeight.w400))]), actions: [
             const AyDrop(),
             PopupMenuButton<String>(
               onSelected: (v) => _menu(c, v),
